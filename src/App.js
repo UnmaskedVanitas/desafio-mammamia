@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header'
+import Navbar from './Components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from './Views/Home'
+import Cart from './Views/Cart'
+import Pizza from './Views/Pizza'
+import { ContextPizzas } from './context.jsx';
 
 function App() {
+  console.log("hola")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ContextPizzas childrenComponent={
+
+        <div>
+          <Navbar />
+          <Header />
+
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/pizza/:id' element={<Pizza />} />
+            <Route path='/carrito' element={<Cart />} />
+          </Routes>
+        </div>
+      } />
+
+
+
+
+    </BrowserRouter>
+
   );
 }
 
