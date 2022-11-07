@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { myContext } from '../context';
 
 
 const Pizza = () => {
@@ -9,7 +10,9 @@ const Pizza = () => {
 
     return (
         <div>
-            {pizzaDetails ? <div></div>}
+            {pizzaDetails ? <div>
+
+            </div> : "No se encontro la pizza con este ID"}
         </div>
     );
 }
