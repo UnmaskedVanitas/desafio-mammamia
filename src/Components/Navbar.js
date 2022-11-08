@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 
 function CollapsibleExample() {
     return (
@@ -18,9 +19,12 @@ function CollapsibleExample() {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets"></Nav.Link>
-                        <Nav.Link as={Link} href="/carrito">
-                            Carrito
-                        </Nav.Link>
+                        <LinkContainer to="/carrito">
+                            <Nav.Link >
+                                Carrito
+                            </Nav.Link>
+                        </LinkContainer>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
