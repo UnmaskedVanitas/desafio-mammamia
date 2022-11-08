@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Carta from '../Components/Carta';
+import { myContext } from '../context';
+
 
 const Cart = () => {
+    const { carro } = useContext(myContext)
     return (
         <div>
-            <h1>Carro</h1>
+            {carro.map((data) => <Carta pizzaData={data} />)}
         </div>
     );
 }

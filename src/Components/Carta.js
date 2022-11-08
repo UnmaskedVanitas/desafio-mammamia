@@ -1,15 +1,21 @@
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom'
+import { myContext } from '../context';
 
 function Carta({ pizzaData }) {
 
+    const { setCarro } = useContext(myContext)
     const navigate = useNavigate()
     const detalles = (pizzaid) => {
         navigate(`pizza/${pizzaid}`)
 
     }
+    const addItem = (pizzaData) => {
+        setCarro((prevValue) => [...prevValue, pizzaData])
 
+    }
 
 
     return (
@@ -20,7 +26,7 @@ function Carta({ pizzaData }) {
                 <Card.Text>{pizzaData.desc}
                 </Card.Text>
                 <Button variant="primary" onClick={() => detalles(pizzaData.id)}>Ver Mas</Button>
-                <Button variant="primary">Añadir</Button>
+                <Button variant="primary" onClick={() => addItem(pizzaData)}>Añadir</Button>
             </Card.Body>
         </Card>
     );

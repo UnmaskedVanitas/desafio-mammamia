@@ -7,15 +7,16 @@ export const myContext = createContext({})
 
 
 export function ContextPizzas({ childrenComponent }) {
-
+    const [carro, setCarro] = useState([])
     const [pizzaData, setPizzaData] = useState([])
     useEffect(() => {
         setPizzaData(pizzas)
     }, [])
 
+
     return (
 
-        <myContext.Provider value={{ pizzaData, setPizzaData }}>
+        <myContext.Provider value={{ pizzaData, setPizzaData, carro, setCarro }}>
             {childrenComponent}
         </myContext.Provider>
     )

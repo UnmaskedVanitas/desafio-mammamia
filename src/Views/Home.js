@@ -10,7 +10,6 @@ const Home = () => {
 
 
     const { pizzaData } = useContext(myContext)
-    console.log(pizzaData)
     return (
         <div className='home'>
             {pizzaData.map((data) => <Carta pizzaData={data} />)}
