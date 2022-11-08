@@ -23,10 +23,10 @@ function Carta({ pizzaData }) {
             <Card.Img variant="top" src={pizzaData.img} />
             <Card.Body>
                 <Card.Title>{pizzaData.name}</Card.Title>
-                <Card.Text>{pizzaData.desc}
-                </Card.Text>
-                <Button variant="primary" onClick={() => detalles(pizzaData.id)}>Ver Mas</Button>
-                <Button variant="primary" onClick={() => addItem(pizzaData)}>Añadir</Button>
+                <Card.Text>{pizzaData.desc}</Card.Text>
+                <Card.Text>Precio: {pizzaData.price}</Card.Text>
+                <Button variant="secondary" onClick={() => detalles(pizzaData.id)}>Ver Mas</Button>
+                <Button variant="secondary" onClick={() => addItem(pizzaData)}>Añadir</Button>
             </Card.Body>
         </Card>
     );

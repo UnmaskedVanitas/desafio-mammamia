@@ -1,21 +1,29 @@
-// import { NavLink } from "react-router-dom"
+import { useContext } from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom'
+import { myContext } from '../context';
+import ListGroup from 'react-bootstrap/ListGroup';
 
-// export default function Navbar() {
-//     const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined);
+function Navigation({ pizzaData }) {
 
-//     return (
-//         <div>
-//             <NavLink className={ setActiveClass } to="/" end>
-//             Home
-//             </NavLink>
-//             {" - "}
-//             <NavLink className={ setActiveClass } to="/pizzas">
-//             Pizzas
-//             </NavLink>
-//             {" - "}
-//             <NavLink className={ setActiveClass } to="/carro">
-//             Carro
-//             </NavLink>
-//         </div>
-//     )
-// }   
+    const { setCarro } = useContext(myContext)
+    const navigate = useNavigate()
+    const detalles = (pizzaid) => {
+        navigate(`pizza/${pizzaid}`)
+
+    }
+    const addItem = (pizzaData) => {
+        setCarro((prevValue) => [...prevValue, pizzaData])
+
+    }
+
+
+
+    return (
+        <ListGroup>
+            <ListGroup.Item>{pizzaData.id} * {pizzaData.price}</ListGroup.Item>
+        </ListGroup>
+    )
+}
+export default Navigation
