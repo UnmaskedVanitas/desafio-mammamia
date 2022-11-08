@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { myContext } from '../context';
-import Carta from '../Components/Carta';
 
 
 const Pizza = () => {

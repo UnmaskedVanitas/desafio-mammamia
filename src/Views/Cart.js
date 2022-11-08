@@ -9,12 +9,13 @@ const Cart = () => {
     const { carro } = useContext(myContext)
     console.log(carro.length)
     return (
-        <div>
+        <div className='carrito'>
 
             {carro.map((data) =>
 
-                <div key={data.id}>
-                    <div><img className='carro' src={data.img}></img></div>{data.name + ", Precio: " + data.price}
+                <div className='carrito2' key={data.id}>
+                    <div><img className='carro' src={data.img}></img></div>
+                    <div>{data.name + ", Precio: " + data.price}</div>
                 </div>)}
 
         </div>
