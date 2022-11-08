@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { myContext } from '../context';
+import './../Styles/detalles.css'
 
 
 const Pizza = () => {
@@ -9,7 +10,7 @@ const Pizza = () => {
     const pizzaDetails = pizzaData.find((pizza) => pizza.id === params.id)
 
     return (
-        <div>
+        <div className='detalles'>
             {pizzaDetails ? <div>
                 <div><img src={pizzaDetails.img}></img></div>
                 <h1>{pizzaDetails.name}</h1>
